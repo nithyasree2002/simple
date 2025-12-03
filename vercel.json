@@ -1,9 +1,18 @@
 {
-  "buildCommand": "npm install --legacy-peer-deps && vite build",
-  "outputDirectory": "dist",
-  "nodeVersion": "18.x",
-  "framework": null,
-  "env": {
-    "VITE_APP_NAME": "my-app"
-  }
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "npm install --legacy-peer-deps && vite build",
+        "outputDirectory": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
