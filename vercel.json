@@ -1,6 +1,9 @@
 {
-  "buildCommand": "npm install && npm run build",
+  "buildCommand": "npm install --legacy-peer-deps && vite build",
   "outputDirectory": "dist",
   "nodeVersion": "18.x",
-  "framework": null
+  "framework": null,
+  "env": {
+    "VITE_APP_NAME": "my-app"
+  }
 }
